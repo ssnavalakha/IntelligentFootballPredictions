@@ -887,7 +887,7 @@ def create_connection(db_file):
 start = time()
 ## Fetching data
 #Connecting to database
-path = "C:\\Users\\Sanket\\Downloads\\soccer (1)\\"  #Insert path here
+path = "C:\\Users\\soham\\PycharmProjects\\FootballDB\\"
 database = path + 'database.sqlite'
 conn = create_connection(database)
 
@@ -919,6 +919,12 @@ bk_cols = ['B365', 'BW', 'IW', 'LB', 'PS', 'WH', 'SJ', 'VC', 'GB', 'BS']
 bk_cols_selected = ['B365', 'BW']
 feables = create_feables(match_data, fifa_data, bk_cols_selected, get_overall = True)
 inputs = feables.drop('match_api_id', axis = 1)
+
+print('--- Feables type', type(feables))
+print(list(feables))
+print(feables.columns.values)
+#print(list(feables.columns.values))
+
 
 #Exploring the data and creating visualizations
 labels = inputs.loc[:,'label']
@@ -1004,3 +1010,4 @@ best_betting = optimize_betting(best_clf, best_dm_reduce, bk_cols_selected, bk_c
 end = time()
 print("Program run in {:.1f} minutes".format((end - start)/60))
 print("The best return of investment is: {}".format(best_betting.results))
+
