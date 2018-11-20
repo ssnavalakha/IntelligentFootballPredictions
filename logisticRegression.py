@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 
+# Call logisticRef method
+
 def logit(z):
     sigma = 1 / (1 + np.exp(-z))
     return sigma
